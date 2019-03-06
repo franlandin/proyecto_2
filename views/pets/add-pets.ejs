@@ -1,42 +1,54 @@
 <%- include('../includes/head.ejs') %>
-    <title>Add pets</title>
+<title>Add pets</title>
 </head>
-<body>
-        <%- include('../includes/navbarToken.ejs') %>
-        <%- include('../includes/error.ejs') %>
 
-        <form action="/pets/add-pets/token/<%=token%>" method="POST">
-            <div class="form-group row">
-                <label for="name">Nombre</label>
-                <input type="text" class="form-control col-xs-2" id="name" name="name" required>
-            </div>
-            <div class="form-group row">
-                <label for="refugee">Refugio</label>
-                <input type="text" class="form-control col-xs-2" id="refugee" name="refugee" required>
-            </div>
-            <div class="form-group row">
-                <label for="city">Ciudad</label>
-                <input type="text" class="form-control col-xs-2" id="city" name="city" required>
-            </div>
-            <div class="form-group row">
-                    <label for="available">Disponible</label>
-                    <label class="radio-inline"><input type="radio" name="available" value="1" checked>Si</label>
-                    <label class="radio-inline"><input type="radio" name="available" value="0">No</label>
+<body>
+    <%- include('../includes/navbarToken.ejs') %>
+    <%- include('../includes/error.ejs') %>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6" style="margin: 0 auto;">
+                <div class="card m-5 p-3">
+                    <div class="card-body">
+                        <form action="/pets/add-pets/token/<%=token%>" method="POST">
+                            <div class="form-group row">
+                                <label for="name">Nombre</label>
+                                <input type="text" class="form-control col-xs-2" id="name" name="name" required>
+                            </div>
+                            <div class="form-group row">
+                                <label for="refugee">Refugio</label>
+                                <input type="text" class="form-control col-xs-2" id="refugee" name="refugee" required>
+                            </div>
+                            <div class="form-group row">
+                                <label for="city">Ciudad</label>
+                                <input type="text" class="form-control col-xs-2" id="city" name="city" required>
+                            </div>
+                            <div class="form-group row">
+                                <label class="mr-2" for="available">Disponible</label>
+                                <label class="radio-inline mr-3"><input type="radio" name="available" value="1"
+                                        checked>Si</label>
+                                <label class="radio-inline"><input type="radio" name="available" value="0">No</label>
+                            </div>
+                            <div class="form-group row">
+                                <label for="price">Precio</label>
+                                <input type="number" class="form-control col-xs-2" id="price" name="price" required>
+                            </div>
+                            <div class="form-group row">
+                                <label for="imageUrl">Foto (enlace)</label>
+                                <input type="url" class="form-control col-xs-2" id="imageUrl" name="imageUrl" required>
+                            </div>
+                            <div class="form-group row">
+                                <label for="Descripcion">Descripcion</label>
+                                <input type="text" class="form-control col-xs-2" rows="3" name="description" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
                 </div>
-            <div class="form-group row">
-                <label for="price">Precio</label>
-                <input type="number" class="form-control col-xs-2" id="price" name="price" required>
             </div>
-            <div class="form-group row">
-                <label for="imageUrl">Foto (enlace)</label>
-                <input type="url" class="form-control col-xs-2" id="imageUrl" name="imageUrl" required>
-            </div>
-            <div class="form-group row">
-                <label for="Descripcion">Descripcion</label>
-                <input type="text" class="form-control col-xs-2"  rows="3" name="description" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-        
+        </div>
+    </div>
+
 </body>
+
 </html>

@@ -5,7 +5,7 @@
 <body>
     <%- include('../includes/navbarToken.ejs') %>
     <%- include('../includes/error.ejs') %>
-
+    <div class="container">
     <form action="/pets/edit-pet/<%= pet.rent_pet_id %>/token/<%=token%>" method="POST">
         <div class="form-group row">
             <label for="name">Nombre</label>
@@ -37,7 +37,7 @@
     <form action="/pets/edit-pet/<%= pet.rent_pet_id %>/delete/token/<%=token%>" method="POST">
         <input type="submit" class="btn btn-danger" bg-color value="Borrar">
     </form>
-        
-    </div>
+</div>    
+    
 </body>
 </html>
