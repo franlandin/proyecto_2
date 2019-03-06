@@ -1,0 +1,19 @@
+<%- include('../includes/head.ejs') %>
+  </head>
+  <body>
+    <%- include('../includes/navbar.ejs') %>
+    <%- include('../includes/error.ejs') %>
+
+        <div class="wrapper">
+          <form class="form-signin" method="post" action="/users/login">
+            <h3 class="form-signin-heading">Please, type your credentials</h3>
+            <input class="form-control" type="text" name="username" placeholder="Username" required="required" />
+            <input class="form-control" type="password" name="password" placeholder="Password" required="required" />
+            <label class="checkbox"></label>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+          </form>
+     
+
+  </div>
+  </body>
+</html>

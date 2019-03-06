@@ -1,0 +1,22 @@
+<%- include('../includes/head.ejs') %>
+</head>
+<body>
+    <%- include('../includes/navbarToken.ejs') %>
+    <%- include('../includes/error.ejs') %>
+    <div>
+        <form action="/pets/rent-pet/<%= pet.rent_pet_id %>/token/<%=token%>" method="POST">
+
+            <div>                
+                <select name="interval">
+                    <% for (let i=0; i < 14; i++ ) { %>
+                        <option value="<%= i + 1 %>"> <%= i + 1 %> </option>
+                    <% } %>   
+                </select>
+            </div>
+
+            <input type="submit" class="btn" value="Rent!">
+        </form>
+
+    </div>
+</body>
+</html>

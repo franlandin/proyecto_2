@@ -1,0 +1,20 @@
+<%- include('../includes/head.ejs') %>
+  </head>
+  <body>
+    <%- include('../includes/navbar.ejs') %>
+    <%- include('../includes/error.ejs') %>
+
+
+        <div class="wrapper">
+          <form class="form-signin" method="post" action="/users/register">
+            <h3 class="form-signin-heading">Register yourself!</h3>
+            <input class="form-control" type="text" name="username" placeholder="Username" required="required" />
+            <input class="form-control" type="password" name="password" placeholder="Password" required="required" />
+            <input class="form-control" type="password" name="password2" placeholder="Repeat password" required="required" />
+            <label class="checkbox"></label>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+          </form>
+
+  </div>
+  </body>
+</html>
