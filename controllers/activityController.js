@@ -24,7 +24,8 @@ const insertActivity = (req, res) =>{
 
 }
 const countActivity = (req, res) =>{
-    activityService.countActivity()
+    const user = req.params.user;
+    activityService.countActivity(user)
         .then(result => {res.send(result)})
         .catch(err => {res.send({message: {"error" :true, "detail": err}}) });
 

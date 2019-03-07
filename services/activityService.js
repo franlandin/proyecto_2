@@ -33,9 +33,9 @@ const insertActivity = (name, actType)  =>{
         });
     })
 }
-const countActivity = ()  =>{   
+const countActivity = (user)  =>{   
     return new Promise((resolve, reject) =>{
-        mongoActivityModel.aggregate([ { $match: {"username": "admin"}}, {$group: {"_id": "$type", count: {$sum: 1}}}], (err, result) =>{
+        mongoActivityModel.aggregate([ { $match: {"username": user}}, {$group: {"_id": "$type", count: {$sum: 1}}}], (err, result) =>{
             if (err) reject (err);
             resolve(result);
         });
