@@ -3,20 +3,25 @@
 <body>
     <%- include('../includes/navbarToken.ejs') %>
     <%- include('../includes/error.ejs') %>
-    <div>
-        <form action="/pets/rent-pet/<%= pet.rent_pet_id %>/token/<%=token%>" method="POST">
-
-            <div>                
-                <select name="interval">
-                    <% for (let i=0; i < 14; i++ ) { %>
-                        <option value="<%= i + 1 %>"> <%= i + 1 %> </option>
-                    <% } %>   
-                </select>
-            </div>
-
-            <input type="submit" class="btn btn-primary" value="Rent!">
-        </form>
-
-    </div>
+    <div>        
+        <div class="container mt-3" style="text-align:center">
+            <div class="row">                                       
+                <div class="card  col-8" style="display: inline-block ">
+                    <form action="/pets/rent-pet/<%= pet.rent_pet_id %>/token/<%=token%>" method="POST">
+                        <h3 class="form-signin-heading text-center mb-4">Rent a pet!</h3>
+                        <label for="interval">Days</label>
+                            <select name="interval">                                    
+                                <% for (let i=0; i < 14; i++ ) { %>                                    
+                                    <option value="<%= i + 1 %>"> <%= i + 1 %> </option>
+                                <% } %>   
+                            </select>
+                        </br>
+                        <input type="submit" class="btn btn-primary" value="Rent!">
+                    </form> 
+                    
+                </div>
+            </div>        
+        </div>
+        </div>
 </body>
 </html>
