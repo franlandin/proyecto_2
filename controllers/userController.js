@@ -11,7 +11,7 @@ function doLogin (req, res){
     .then(result => {
         console.log(result.length);
         if(result.length !== 1){
-            res.render('index', {message : {type : 'error', text: 'bad credentials'}});
+            res.render('login/login', {message : {type : 'error', text: 'Bad credentials'}});
         } else{
             const user = result[0];
             const pass = req.body.password;
@@ -19,7 +19,7 @@ function doLogin (req, res){
             const cryptPasswd = crypt.encryptPass(pass);
             if(cryptPasswd !== dbPass){
                 console.log("vas mal");
-                res.render('index', {message : {type : 'error', text: 'bad credentials'}})
+                res.render('login/login', {message : {type : 'error', text: 'Bad credentials'}})
             } else {
                 const info = {id: user.id, name: user.username};
                 const name = info.name;

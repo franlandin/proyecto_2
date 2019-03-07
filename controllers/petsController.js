@@ -46,7 +46,6 @@ exports.getAddPets = (req, res, next) => {
   exports.getEditPet = (req, res, next) => {
     const petId = req.params.petId;
     const token = req.params.token;
-    console.log("pene");
     Pet.findById(petId)    
     .then(([row]) => {
       console.log("hola");

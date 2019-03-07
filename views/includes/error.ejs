@@ -1,7 +1,9 @@
 <% if (locals.message) { 
     if(message.type === 'error'){ %>
-        <p style="color: red"><%=message.text%></p>
-    <%}
+        <div class="alert alert-danger text-center" role="alert">
+            <%=message.text%>
+        </div>
+<%}
     if(message.type === 'info'){ %>
         <p style="color: green"><%=message.text%></p>
     <%}
